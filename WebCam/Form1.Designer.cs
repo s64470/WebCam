@@ -28,31 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
+            buttonStartWebcam = new Button();
+            buttonStopWebcam = new Button();
             pictureBoxWebcamSurface = new PictureBox();
             textBoxCamera = new TextBox();
             cbBoxCamera = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBoxWebcamSurface).BeginInit();
             SuspendLayout();
             // 
-            // button1
+            // buttonStartWebcam
             // 
-            button1.Location = new Point(12, 409);
-            button1.Name = "button1";
-            button1.Size = new Size(110, 29);
-            button1.TabIndex = 0;
-            button1.Text = "Start Webcam";
-            button1.UseVisualStyleBackColor = true;
+            buttonStartWebcam.Location = new Point(12, 409);
+            buttonStartWebcam.Name = "buttonStartWebcam";
+            buttonStartWebcam.Size = new Size(110, 29);
+            buttonStartWebcam.TabIndex = 0;
+            buttonStartWebcam.Text = "Start Webcam";
+            buttonStartWebcam.UseVisualStyleBackColor = true;
+            buttonStartWebcam.Click += ButtonStartWebcam_Click;
             // 
-            // button2
+            // buttonStopWebcam
             // 
-            button2.Location = new Point(678, 409);
-            button2.Name = "button2";
-            button2.Size = new Size(110, 29);
-            button2.TabIndex = 1;
-            button2.Text = "Stop Webcam";
-            button2.UseVisualStyleBackColor = true;
+            buttonStopWebcam.Location = new Point(678, 409);
+            buttonStopWebcam.Name = "buttonStopWebcam";
+            buttonStopWebcam.Size = new Size(110, 29);
+            buttonStopWebcam.TabIndex = 1;
+            buttonStopWebcam.Text = "Stop Webcam";
+            buttonStopWebcam.UseVisualStyleBackColor = true;
             // 
             // pictureBoxWebcamSurface
             // 
@@ -87,10 +88,11 @@
             Controls.Add(cbBoxCamera);
             Controls.Add(textBoxCamera);
             Controls.Add(pictureBoxWebcamSurface);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(buttonStopWebcam);
+            Controls.Add(buttonStartWebcam);
             Name = "Form1";
             Text = "Webcam";
+            Load += Form1_Load_1;
             ((System.ComponentModel.ISupportInitialize)pictureBoxWebcamSurface).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -98,8 +100,8 @@
 
         #endregion
 
-        private Button button1;
-        private Button button2;
+        private Button buttonStartWebcam;
+        private Button buttonStopWebcam;
         private PictureBox pictureBoxWebcamSurface;
         private TextBox textBoxCamera;
         private ComboBox cbBoxCamera;

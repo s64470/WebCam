@@ -27,7 +27,7 @@ namespace WebCam
             pictureBoxWebcamSurface.Image = (Bitmap)eventArgs.Frame.Clone();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load_1(object sender, EventArgs e)
         {
             // Identify the Webcam from a computer and add it to the combobox
             filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
