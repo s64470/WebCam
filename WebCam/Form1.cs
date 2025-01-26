@@ -10,27 +10,40 @@ namespace WebCam
             InitializeComponent();
         }
 
-        FilterInfoCollection filterInfoCollection;
-        VideoCaptureDevice videoCaptureDevice;
+        private FilterInfoCollection filterInfoCollection;
+        private VideoCaptureDevice videoCaptureDevice;
 
         // Event handler to update picture frames
-        // Start captureing webcam frames
+        // Start capturing webcam stream
         private void ButtonStartWebcam_Click(object sender, EventArgs e)
         {
-            videoCaptureDevice = new VideoCaptureDevice(filterInfoCollection[cbBoxCamera.SelectedIndex].MonikerString);
-            videoCaptureDevice.NewFrame += VideoCaptureDevice_NewFrame;
-            videoCaptureDevice.Start();
+            if (buttonWebcam.Text == "Start Webcam Stream")
+            {
+                // Start capturing stream
+                videoCaptureDevice = new VideoCaptureDevice(filterInfoCollection[cbBoxCamera.SelectedIndex].MonikerString);
+                videoCaptureDevice.NewFrame += VideoCaptureDevice_NewFrame;
+                videoCaptureDevice.Start();
+
+                buttonWebcam.Text = "Stop Webcam Stream";           // Change button value
+            }
+            else
+            {
+                // Stop capturing stream
+                videoCaptureDevice.SignalToStop();
+                videoCaptureDevice.NewFrame -= new NewFrameEventHandler(VideoCaptureDevice_NewFrame);
+
+                buttonWebcam.Text = "Start Webcam Stream";          // Change button value
+            }
         }
 
         private void VideoCaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            // throw new NotImplementedException();
             pictureBoxWebcamSurface.Image = (Bitmap)eventArgs.Frame.Clone();
         }
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
-            // Identify the Webcam from a computer and add it to the combobox
+            // Identify the webcam from a computer and add it to the combobox
             filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
 
             foreach (FilterInfo filterInfo in filterInfoCollection)
@@ -39,10 +52,6 @@ namespace WebCam
                 cbBoxCamera.SelectedIndex = 0;
                 videoCaptureDevice = new VideoCaptureDevice();
             }
-        }
-
-        private void ButtonStopWebcam_Click(object sender, EventArgs e)
-        {
         }
 
         // Exit Windows Forms app
