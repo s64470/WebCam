@@ -2,6 +2,7 @@
 using AForge.Video;
 using AForge.Video.DirectShow;
 
+//System dll
 using System.Drawing.Imaging;
 
 namespace WebCam
@@ -10,6 +11,7 @@ namespace WebCam
     {
         private FilterInfoCollection filterInfoCollection;          // List of webcam
         private VideoCaptureDevice videoCaptureDevice;
+        private readonly String fileLocation = "ImageStorage\\stream.png";
 
         public Form1()
         {
@@ -84,7 +86,7 @@ namespace WebCam
                 //Save First
                 Bitmap varBmp = new(pictureBoxWebcamSurface.Image);
                 _ = new Bitmap(varBmp);
-                varBmp.Save(@"C:\Users\Dani\OneDrive\Visual Studio Projects\WebCam\a.png", ImageFormat.Png);
+                varBmp.Save(fileLocation, ImageFormat.Png);
 
                 //Now Dispose to free the memory
                 varBmp.Dispose();
