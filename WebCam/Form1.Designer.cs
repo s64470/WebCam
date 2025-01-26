@@ -33,6 +33,7 @@
             pictureBoxWebcamSurface = new PictureBox();
             textBoxCamera = new TextBox();
             cbBoxCamera = new ComboBox();
+            buttonExit = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxWebcamSurface).BeginInit();
             SuspendLayout();
             // 
@@ -48,12 +49,13 @@
             // 
             // buttonStopWebcam
             // 
-            buttonStopWebcam.Location = new Point(678, 409);
+            buttonStopWebcam.Location = new Point(143, 409);
             buttonStopWebcam.Name = "buttonStopWebcam";
             buttonStopWebcam.Size = new Size(110, 29);
             buttonStopWebcam.TabIndex = 1;
             buttonStopWebcam.Text = "Stop Webcam";
             buttonStopWebcam.UseVisualStyleBackColor = true;
+            buttonStopWebcam.Click += ButtonStopWebcam_Click;
             // 
             // pictureBoxWebcamSurface
             // 
@@ -80,11 +82,22 @@
             cbBoxCamera.Size = new Size(250, 28);
             cbBoxCamera.TabIndex = 4;
             // 
+            // buttonExit
+            // 
+            buttonExit.Location = new Point(678, 409);
+            buttonExit.Name = "buttonExit";
+            buttonExit.Size = new Size(110, 29);
+            buttonExit.TabIndex = 5;
+            buttonExit.Text = "Exit";
+            buttonExit.UseVisualStyleBackColor = true;
+            buttonExit.Click += ButtonExit_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonExit);
             Controls.Add(cbBoxCamera);
             Controls.Add(textBoxCamera);
             Controls.Add(pictureBoxWebcamSurface);
@@ -105,5 +118,6 @@
         private PictureBox pictureBoxWebcamSurface;
         private TextBox textBoxCamera;
         private ComboBox cbBoxCamera;
+        private Button buttonExit;
     }
 }

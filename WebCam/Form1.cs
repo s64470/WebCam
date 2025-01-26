@@ -14,6 +14,7 @@ namespace WebCam
         VideoCaptureDevice videoCaptureDevice;
 
         // Event handler to update picture frames
+        // Start captureing webcam frames
         private void ButtonStartWebcam_Click(object sender, EventArgs e)
         {
             videoCaptureDevice = new VideoCaptureDevice(filterInfoCollection[cbBoxCamera.SelectedIndex].MonikerString);
@@ -37,6 +38,25 @@ namespace WebCam
                 cbBoxCamera.Items.Add(filterInfo.Name);
                 cbBoxCamera.SelectedIndex = 0;
                 videoCaptureDevice = new VideoCaptureDevice();
+            }
+        }
+
+        private void ButtonStopWebcam_Click(object sender, EventArgs e)
+        {
+        }
+
+        // Exit Windows Forms app
+        private void ButtonExit_Click(object sender, EventArgs e)
+        {
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                // Windows Forms app
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                // Console app
+                System.Environment.Exit(1);
             }
         }
     }
