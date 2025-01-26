@@ -56,10 +56,11 @@
             // 
             // textBoxCamera
             // 
-            textBoxCamera.Location = new Point(12, 376);
+            textBoxCamera.BorderStyle = BorderStyle.None;
+            textBoxCamera.Location = new Point(12, 383);
             textBoxCamera.Name = "textBoxCamera";
             textBoxCamera.ReadOnly = true;
-            textBoxCamera.Size = new Size(125, 27);
+            textBoxCamera.Size = new Size(70, 20);
             textBoxCamera.TabIndex = 3;
             textBoxCamera.Text = "Camera:";
             // 
