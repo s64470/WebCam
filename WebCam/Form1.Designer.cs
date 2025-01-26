@@ -48,6 +48,7 @@
             // 
             // pictureBoxWebcamSurface
             // 
+            pictureBoxWebcamSurface.BackColor = SystemColors.ActiveCaptionText;
             pictureBoxWebcamSurface.Location = new Point(12, 12);
             pictureBoxWebcamSurface.Name = "pictureBoxWebcamSurface";
             pictureBoxWebcamSurface.Size = new Size(776, 350);
