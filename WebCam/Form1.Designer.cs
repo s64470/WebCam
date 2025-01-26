@@ -28,56 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            buttonStartWebcam = new Button();
+            buttonStopWebcam = new Button();
+            pictureBoxWebcamSurface = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxWebcamSurface).BeginInit();
             SuspendLayout();
             // 
-            // button1
+            // buttonStartWebcam
             // 
-            button1.Location = new Point(12, 409);
-            button1.Name = "button1";
-            button1.Size = new Size(110, 29);
-            button1.TabIndex = 0;
-            button1.Text = "Start Webcam";
-            button1.UseVisualStyleBackColor = true;
+            buttonStartWebcam.Location = new Point(12, 409);
+            buttonStartWebcam.Name = "buttonStartWebcam";
+            buttonStartWebcam.Size = new Size(110, 29);
+            buttonStartWebcam.TabIndex = 0;
+            buttonStartWebcam.Text = "Start Webcam";
+            buttonStartWebcam.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonStopWebcam
             // 
-            button2.Location = new Point(678, 409);
-            button2.Name = "button2";
-            button2.Size = new Size(110, 29);
-            button2.TabIndex = 1;
-            button2.Text = "Stop Webcam";
-            button2.UseVisualStyleBackColor = true;
+            buttonStopWebcam.Location = new Point(678, 409);
+            buttonStopWebcam.Name = "buttonStopWebcam";
+            buttonStopWebcam.Size = new Size(110, 29);
+            buttonStopWebcam.TabIndex = 1;
+            buttonStopWebcam.Text = "Stop Webcam";
+            buttonStopWebcam.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // pictureBoxWebcamSurface
             // 
-            pictureBox1.Location = new Point(12, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(776, 350);
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            pictureBoxWebcamSurface.Location = new Point(12, 12);
+            pictureBoxWebcamSurface.Name = "pictureBoxWebcamSurface";
+            pictureBoxWebcamSurface.Size = new Size(776, 350);
+            pictureBoxWebcamSurface.TabIndex = 2;
+            pictureBoxWebcamSurface.TabStop = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(pictureBox1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(pictureBoxWebcamSurface);
+            Controls.Add(buttonStopWebcam);
+            Controls.Add(buttonStartWebcam);
             Name = "Form1";
             Text = "Webcam";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxWebcamSurface).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Button button1;
-        private Button button2;
-        private PictureBox pictureBox1;
+        private Button buttonStartWebcam;
+        private Button buttonStopWebcam;
+        private PictureBox pictureBoxWebcamSurface;
     }
 }
