@@ -17,14 +17,14 @@ namespace WebCam
         // Start capturing webcam stream
         private void ButtonStartWebcam_Click(object sender, EventArgs e)
         {
-            if (buttonWebcam.Text == "Start Webcam Stream")
+            if (buttonWebcam.Text == "Start webcam stream")
             {
                 // Start capturing stream
                 videoCaptureDevice = new VideoCaptureDevice(filterInfoCollection[cbBoxCamera.SelectedIndex].MonikerString);
                 videoCaptureDevice.NewFrame += VideoCaptureDevice_NewFrame;
                 videoCaptureDevice.Start();
 
-                buttonWebcam.Text = "Stop Webcam Stream";           // Change button value
+                buttonWebcam.Text = "Stop webcam stream";           // Change button value
             }
             else
             {
@@ -32,7 +32,7 @@ namespace WebCam
                 videoCaptureDevice.SignalToStop();
                 videoCaptureDevice.NewFrame -= new NewFrameEventHandler(VideoCaptureDevice_NewFrame);
 
-                buttonWebcam.Text = "Start Webcam Stream";          // Change button value
+                buttonWebcam.Text = "Start webcam stream";          // Change button value
             }
         }
 

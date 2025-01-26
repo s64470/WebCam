@@ -42,7 +42,7 @@
             buttonWebcam.Name = "buttonWebcam";
             buttonWebcam.Size = new Size(170, 29);
             buttonWebcam.TabIndex = 0;
-            buttonWebcam.Text = "Start Webcam Stream";
+            buttonWebcam.Text = "Start webcam stream";
             buttonWebcam.UseVisualStyleBackColor = true;
             buttonWebcam.Click += ButtonStartWebcam_Click;
             // 
