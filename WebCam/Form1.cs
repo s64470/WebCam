@@ -1,17 +1,20 @@
+//AForge.Video dll
 using AForge.Video;
 using AForge.Video.DirectShow;
+
+using System.Drawing.Imaging;
 
 namespace WebCam
 {
     public partial class Form1 : Form
     {
+        private FilterInfoCollection filterInfoCollection;          // List of webcam
+        private VideoCaptureDevice videoCaptureDevice;
+
         public Form1()
         {
             InitializeComponent();
         }
-
-        private FilterInfoCollection filterInfoCollection;
-        private VideoCaptureDevice videoCaptureDevice;
 
         // Event handler to update picture frames
         // Start capturing webcam stream
@@ -71,6 +74,23 @@ namespace WebCam
                 // Console app
                 System.Environment.Exit(1);
             }
+        }
+
+        // Capture webcam stream
+        private void ButtonCaptureStream_Click(object sender, EventArgs e)
+        {
+            if (pictureBoxWebcamSurface.Image != null)
+            {
+                //Save First
+                Bitmap varBmp = new(pictureBoxWebcamSurface.Image);
+                _ = new Bitmap(varBmp);
+                varBmp.Save(@"C:\Users\Dani\OneDrive\Visual Studio Projects\WebCam\a.png", ImageFormat.Png);
+
+                //Now Dispose to free the memory
+                varBmp.Dispose();
+            }
+            else
+            { MessageBox.Show("No stream"); }
         }
     }
 }

@@ -33,6 +33,7 @@
             textBoxCamera = new TextBox();
             cbBoxCamera = new ComboBox();
             buttonExit = new Button();
+            buttonCaptureStream = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxWebcamSurface).BeginInit();
             SuspendLayout();
             // 
@@ -83,11 +84,22 @@
             buttonExit.UseVisualStyleBackColor = true;
             buttonExit.Click += ButtonExit_Click;
             // 
+            // buttonCaptureStream
+            // 
+            buttonCaptureStream.Location = new Point(188, 409);
+            buttonCaptureStream.Name = "buttonCaptureStream";
+            buttonCaptureStream.Size = new Size(94, 29);
+            buttonCaptureStream.TabIndex = 6;
+            buttonCaptureStream.Text = "Capture";
+            buttonCaptureStream.UseVisualStyleBackColor = true;
+            buttonCaptureStream.Click += ButtonCaptureStream_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonCaptureStream);
             Controls.Add(buttonExit);
             Controls.Add(cbBoxCamera);
             Controls.Add(textBoxCamera);
@@ -108,5 +120,6 @@
         private TextBox textBoxCamera;
         private ComboBox cbBoxCamera;
         private Button buttonExit;
+        private Button buttonCaptureStream;
     }
 }
