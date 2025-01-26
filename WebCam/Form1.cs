@@ -59,6 +59,10 @@ namespace WebCam
         {
             if (System.Windows.Forms.Application.MessageLoop)
             {
+                // Stop capturing stream
+                videoCaptureDevice.SignalToStop();
+                videoCaptureDevice.NewFrame -= new NewFrameEventHandler(VideoCaptureDevice_NewFrame);
+
                 // Windows Forms app
                 System.Windows.Forms.Application.Exit();
             }
