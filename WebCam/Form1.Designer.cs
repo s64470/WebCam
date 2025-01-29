@@ -30,10 +30,12 @@
         {
             buttonWebcam = new Button();
             pictureBoxWebcamSurface = new PictureBox();
-            textBoxCamera = new TextBox();
+            tBCamera = new TextBox();
             cbBoxCamera = new ComboBox();
             buttonExit = new Button();
             buttonCaptureStream = new Button();
+            cBFileContainer = new ComboBox();
+            tBFiles = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBoxWebcamSurface).BeginInit();
             SuspendLayout();
             // 
@@ -52,19 +54,19 @@
             pictureBoxWebcamSurface.BackColor = SystemColors.ActiveCaptionText;
             pictureBoxWebcamSurface.Location = new Point(12, 12);
             pictureBoxWebcamSurface.Name = "pictureBoxWebcamSurface";
-            pictureBoxWebcamSurface.Size = new Size(776, 350);
+            pictureBoxWebcamSurface.Size = new Size(483, 350);
             pictureBoxWebcamSurface.TabIndex = 2;
             pictureBoxWebcamSurface.TabStop = false;
             // 
-            // textBoxCamera
+            // tBCamera
             // 
-            textBoxCamera.BorderStyle = BorderStyle.None;
-            textBoxCamera.Location = new Point(12, 383);
-            textBoxCamera.Name = "textBoxCamera";
-            textBoxCamera.ReadOnly = true;
-            textBoxCamera.Size = new Size(70, 20);
-            textBoxCamera.TabIndex = 3;
-            textBoxCamera.Text = "Camera:";
+            tBCamera.BorderStyle = BorderStyle.None;
+            tBCamera.Location = new Point(12, 383);
+            tBCamera.Name = "tBCamera";
+            tBCamera.ReadOnly = true;
+            tBCamera.Size = new Size(70, 20);
+            tBCamera.TabIndex = 3;
+            tBCamera.Text = "Camera:";
             // 
             // cbBoxCamera
             // 
@@ -94,15 +96,35 @@
             buttonCaptureStream.UseVisualStyleBackColor = true;
             buttonCaptureStream.Click += ButtonCaptureStream_Click;
             // 
+            // cBFileContainer
+            // 
+            cBFileContainer.FormattingEnabled = true;
+            cBFileContainer.Location = new Point(517, 38);
+            cBFileContainer.Name = "cBFileContainer";
+            cBFileContainer.Size = new Size(271, 28);
+            cBFileContainer.TabIndex = 7;
+            // 
+            // tBFiles
+            // 
+            tBFiles.BackColor = SystemColors.Control;
+            tBFiles.BorderStyle = BorderStyle.None;
+            tBFiles.Location = new Point(517, 12);
+            tBFiles.Name = "tBFiles";
+            tBFiles.Size = new Size(125, 20);
+            tBFiles.TabIndex = 9;
+            tBFiles.Text = "Files:";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(tBFiles);
+            Controls.Add(cBFileContainer);
             Controls.Add(buttonCaptureStream);
             Controls.Add(buttonExit);
             Controls.Add(cbBoxCamera);
-            Controls.Add(textBoxCamera);
+            Controls.Add(tBCamera);
             Controls.Add(pictureBoxWebcamSurface);
             Controls.Add(buttonWebcam);
             Name = "Form1";
@@ -117,9 +139,11 @@
 
         private Button buttonWebcam;
         private PictureBox pictureBoxWebcamSurface;
-        private TextBox textBoxCamera;
+        private TextBox tBCamera;
         private ComboBox cbBoxCamera;
         private Button buttonExit;
         private Button buttonCaptureStream;
+        private ComboBox cBFileContainer;
+        private TextBox tBFiles;
     }
 }
