@@ -57,6 +57,21 @@ namespace WebCam
                 cbBoxCamera.SelectedIndex = 0;
                 videoCaptureDevice = new VideoCaptureDevice();
             }
+
+            // Add list view menu && properties
+            listViewSavedPictures.View = View.Details;
+            listViewSavedPictures.Columns.Add("Name");
+            listViewSavedPictures.Columns.Add("Date modified");
+            listViewSavedPictures.Columns.Add("Size");
+            //listViewSavedPictures.Columns.Add("Location");
+
+            // Column size
+            //listViewSavedPictures.Columns[1].Width = 120;   // Date modified
+            //listViewSavedPictures.Columns[2].Width = 88;    // Size
+            for (int i = 0; i < listViewSavedPictures.Columns.Count; i++)
+            {
+                listViewSavedPictures.Columns[i].Width = -2;
+            }
         }
 
         // Exit Windows Forms app

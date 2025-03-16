@@ -34,8 +34,8 @@
             cbBoxCamera = new ComboBox();
             buttonExit = new Button();
             buttonCaptureStream = new Button();
-            cBFileContainer = new ComboBox();
             tBFiles = new TextBox();
+            listViewSavedPictures = new ListView();
             ((System.ComponentModel.ISupportInitialize)pictureBoxWebcamSurface).BeginInit();
             SuspendLayout();
             // 
@@ -96,14 +96,6 @@
             buttonCaptureStream.UseVisualStyleBackColor = true;
             buttonCaptureStream.Click += ButtonCaptureStream_Click;
             // 
-            // cBFileContainer
-            // 
-            cBFileContainer.FormattingEnabled = true;
-            cBFileContainer.Location = new Point(517, 38);
-            cBFileContainer.Name = "cBFileContainer";
-            cBFileContainer.Size = new Size(271, 28);
-            cBFileContainer.TabIndex = 7;
-            // 
             // tBFiles
             // 
             tBFiles.BackColor = SystemColors.Control;
@@ -114,13 +106,21 @@
             tBFiles.TabIndex = 9;
             tBFiles.Text = "Saved Pictures:";
             // 
+            // listViewSavedPictures
+            // 
+            listViewSavedPictures.Location = new Point(517, 38);
+            listViewSavedPictures.Name = "listViewSavedPictures";
+            listViewSavedPictures.Size = new Size(271, 324);
+            listViewSavedPictures.TabIndex = 10;
+            listViewSavedPictures.UseCompatibleStateImageBehavior = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(listViewSavedPictures);
             Controls.Add(tBFiles);
-            Controls.Add(cBFileContainer);
             Controls.Add(buttonCaptureStream);
             Controls.Add(buttonExit);
             Controls.Add(cbBoxCamera);
@@ -143,7 +143,7 @@
         private ComboBox cbBoxCamera;
         private Button buttonExit;
         private Button buttonCaptureStream;
-        private ComboBox cBFileContainer;
         private TextBox tBFiles;
+        private ListView listViewSavedPictures;
     }
 }
