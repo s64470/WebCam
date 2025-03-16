@@ -12,6 +12,7 @@ namespace WebCam
         private FilterInfoCollection filterInfoCollection;          // List of webcam
         private VideoCaptureDevice videoCaptureDevice;
         private readonly String fileLocation = "ImageStorage\\stream.png";
+        private readonly String targetDirectory = "ImageStorage\\";
 
         public Form1()
         {
@@ -61,17 +62,18 @@ namespace WebCam
             // Add list view menu && properties
             listViewSavedPictures.View = View.Details;
             listViewSavedPictures.Columns.Add("Name");
-            listViewSavedPictures.Columns.Add("Date modified");
-            listViewSavedPictures.Columns.Add("Size");
+            //listViewSavedPictures.Columns.Add("Date modified");
+            //listViewSavedPictures.Columns.Add("Size");
             //listViewSavedPictures.Columns.Add("Location");
 
             // Column size
-            //listViewSavedPictures.Columns[1].Width = 120;   // Date modified
-            //listViewSavedPictures.Columns[2].Width = 88;    // Size
             for (int i = 0; i < listViewSavedPictures.Columns.Count; i++)
-            {
                 listViewSavedPictures.Columns[i].Width = -2;
-            }
+
+            // Read files from a directory and add it to the list view
+            string[] fileEntries = Directory.GetFiles(targetDirectory);
+            foreach (string file in fileEntries)
+                listViewSavedPictures.Items.Add(Path.GetFileName(file));
         }
 
         // Exit Windows Forms app
