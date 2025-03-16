@@ -112,7 +112,7 @@
             tBFiles.Name = "tBFiles";
             tBFiles.Size = new Size(125, 20);
             tBFiles.TabIndex = 9;
-            tBFiles.Text = "Files:";
+            tBFiles.Text = "Saved Pictures:";
             // 
             // Form1
             // 
